@@ -1,0 +1,951 @@
+/* =========================================================
+   STICKER MAKER
+   style.css
+   ========================================================= */
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   ROOT
+========================= */
+
+:root {
+
+  --bg-1: #07111f;
+  --bg-2: #0d1b2e;
+  --bg-3: #111f33;
+
+  --card: rgba(17, 29, 46, 0.88);
+
+  --border: rgba(255, 255, 255, 0.08);
+
+  --text: #ffffff;
+  --text-secondary: #9ba8ba;
+  --text-muted: #69778b;
+
+  --green: #25d366;
+  --green-dark: #128c7e;
+
+  --blue: #3b82f6;
+  --blue-dark: #2563eb;
+
+  --danger: #ef4444;
+
+  --radius: 24px;
+
+  --shadow:
+    0 25px 70px rgba(0, 0, 0, 0.35);
+
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+
+  min-height: 100vh;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+
+  color: var(--text);
+
+  background:
+    radial-gradient(
+      circle at 10% 0%,
+      rgba(37, 211, 102, 0.12),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(59, 130, 246, 0.12),
+      transparent 30%
+    ),
+
+    linear-gradient(
+      145deg,
+      var(--bg-1),
+      var(--bg-2),
+      var(--bg-3)
+    );
+
+  background-attachment: fixed;
+
+}
+
+
+/* =========================
+   APP
+========================= */
+
+.app {
+
+  width: 100%;
+
+  max-width: 560px;
+
+  margin: 0 auto;
+
+  padding:
+    25px
+    18px
+    35px;
+
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+
+  text-align: center;
+
+  margin:
+    10px
+    0
+    25px;
+
+}
+
+
+.logo {
+
+  width: 72px;
+
+  height: 72px;
+
+  margin:
+    0
+    auto
+    15px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 34px;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--green),
+      var(--green-dark)
+    );
+
+  box-shadow:
+    0 15px 35px
+    rgba(37, 211, 102, 0.22);
+
+}
+
+
+.header h1 {
+
+  font-size: 30px;
+
+  font-weight: 800;
+
+  letter-spacing: -0.7px;
+
+}
+
+
+.header p {
+
+  margin-top: 8px;
+
+  color: var(--text-secondary);
+
+  font-size: 14px;
+
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+
+  width: 100%;
+
+  padding: 18px;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    var(--radius);
+
+  background:
+    var(--card);
+
+  box-shadow:
+    var(--shadow);
+
+  backdrop-filter:
+    blur(20px);
+
+  -webkit-backdrop-filter:
+    blur(20px);
+
+}
+
+
+/* =========================
+   UPLOAD BOX
+========================= */
+
+.upload-box {
+
+  width: 100%;
+
+  min-height: 220px;
+
+  padding: 30px 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  border:
+    2px dashed
+    rgba(255, 255, 255, 0.13);
+
+  border-radius: 21px;
+
+  cursor: pointer;
+
+  transition:
+    border-color .25s ease,
+    background .25s ease,
+    transform .25s ease;
+
+}
+
+
+.upload-box:hover {
+
+  border-color:
+    rgba(37, 211, 102, .65);
+
+  background:
+    rgba(37, 211, 102, .035);
+
+}
+
+
+.upload-box:active {
+
+  transform:
+    scale(.985);
+
+}
+
+
+.upload-icon {
+
+  width: 68px;
+
+  height: 68px;
+
+  margin-bottom: 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 32px;
+
+  border-radius: 20px;
+
+  background:
+    rgba(255, 255, 255, .06);
+
+}
+
+
+.upload-box h2 {
+
+  font-size: 18px;
+
+  font-weight: 700;
+
+}
+
+
+.upload-box span {
+
+  margin-top: 8px;
+
+  color:
+    var(--text-muted);
+
+  font-size: 13px;
+
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+.loading {
+
+  display: none;
+
+  padding:
+    25px
+    10px;
+
+  text-align: center;
+
+}
+
+
+.spinner {
+
+  width: 42px;
+
+  height: 42px;
+
+  margin:
+    0
+    auto;
+
+  border:
+    4px solid
+    rgba(255, 255, 255, .1);
+
+  border-top-color:
+    var(--green);
+
+  border-radius: 50%;
+
+  animation:
+    spinnerRotation
+    .8s
+    linear
+    infinite;
+
+}
+
+
+@keyframes spinnerRotation {
+
+  to {
+
+    transform:
+      rotate(360deg);
+
+  }
+
+}
+
+
+.loading p {
+
+  margin-top: 13px;
+
+  color:
+    var(--text-secondary);
+
+  font-size: 14px;
+
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+
+  display: none;
+
+  margin-top: 15px;
+
+  padding:
+    13px
+    15px;
+
+  color:
+    var(--text-secondary);
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  text-align: center;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius: 15px;
+
+  background:
+    rgba(255,255,255,.035);
+
+}
+
+
+/* =========================
+   PREVIEW
+========================= */
+
+.preview-container {
+
+  display: none;
+
+  width: 100%;
+
+  margin-top: 18px;
+
+}
+
+
+.checkerboard {
+
+  width: 100%;
+
+  min-height: 330px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-radius: 21px;
+
+  background-color: #ffffff;
+
+  background-image:
+
+    linear-gradient(
+      45deg,
+      #d8d8d8 25%,
+      transparent 25%
+    ),
+
+    linear-gradient(
+      -45deg,
+      #d8d8d8 25%,
+      transparent 25%
+    ),
+
+    linear-gradient(
+      45deg,
+      transparent 75%,
+      #d8d8d8 75%
+    ),
+
+    linear-gradient(
+      -45deg,
+      transparent 75%,
+      #d8d8d8 75%
+    );
+
+  background-size:
+    32px 32px;
+
+  background-position:
+    0 0,
+    0 16px,
+    16px -16px,
+    -16px 0;
+
+}
+
+
+#stickerCanvas {
+
+  width: 100%;
+
+  max-width: 512px;
+
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+
+}
+
+
+/* =========================
+   ACTIONS
+========================= */
+
+.actions {
+
+  display: none;
+
+  margin-top: 18px;
+
+  gap: 10px;
+
+  flex-direction: column;
+
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn {
+
+  width: 100%;
+
+  min-height: 54px;
+
+  padding:
+    14px
+    18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  border: none;
+
+  border-radius: 16px;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition:
+    transform .18s ease,
+    filter .18s ease,
+    box-shadow .18s ease,
+    opacity .18s ease;
+
+}
+
+
+.btn span {
+
+  font-size: 17px;
+
+}
+
+
+.btn:hover {
+
+  filter:
+    brightness(1.08);
+
+}
+
+
+.btn:active {
+
+  transform:
+    scale(.975);
+
+}
+
+
+.btn:disabled {
+
+  opacity: .5;
+
+  cursor:
+    not-allowed;
+
+}
+
+
+/* =========================
+   DOWNLOAD BUTTON
+========================= */
+
+.btn-download {
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--blue),
+      var(--blue-dark)
+    );
+
+  box-shadow:
+    0 10px 25px
+    rgba(37, 99, 235, .2);
+
+}
+
+
+/* =========================
+   SHARE BUTTON
+========================= */
+
+.btn-share {
+
+  background:
+    linear-gradient(
+      135deg,
+      #6366f1,
+      #4f46e5
+    );
+
+  box-shadow:
+    0 10px 25px
+    rgba(79, 70, 229, .18);
+
+}
+
+
+/* =========================
+   WHATSAPP BUTTON
+========================= */
+
+.btn-whatsapp {
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--green),
+      var(--green-dark)
+    );
+
+  box-shadow:
+    0 10px 25px
+    rgba(37, 211, 102, .2);
+
+}
+
+
+/* =========================
+   RESET BUTTON
+========================= */
+
+.btn-reset {
+
+  color:
+    #d8e0ea;
+
+  background:
+    rgba(255,255,255,.07);
+
+  border:
+    1px solid
+    rgba(255,255,255,.07);
+
+}
+
+
+.btn-reset:hover {
+
+  background:
+    rgba(255,255,255,.1);
+
+}
+
+
+/* =========================
+   INFO
+========================= */
+
+.info {
+
+  margin-top: 20px;
+
+  padding-top: 17px;
+
+  border-top:
+    1px solid
+    rgba(255,255,255,.06);
+
+}
+
+
+.info-item {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 10px;
+
+  margin-bottom: 12px;
+
+}
+
+
+.info-item:last-child {
+
+  margin-bottom: 0;
+
+}
+
+
+.info-item span {
+
+  width: 30px;
+
+  height: 30px;
+
+  flex:
+    0 0 30px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background:
+    rgba(255,255,255,.05);
+
+  font-size: 14px;
+
+}
+
+
+.info-item p {
+
+  padding-top: 5px;
+
+  color:
+    var(--text-muted);
+
+  font-size: 12px;
+
+  line-height: 1.45;
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+  margin-top: 20px;
+
+  color:
+    #566477;
+
+  font-size: 12px;
+
+  text-align: center;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .app {
+
+    padding:
+      18px
+      12px
+      30px;
+
+  }
+
+
+  .header {
+
+    margin-top: 5px;
+
+  }
+
+
+  .logo {
+
+    width: 64px;
+
+    height: 64px;
+
+    font-size: 30px;
+
+    border-radius: 20px;
+
+  }
+
+
+  .header h1 {
+
+    font-size: 27px;
+
+  }
+
+
+  .card {
+
+    padding: 14px;
+
+    border-radius: 21px;
+
+  }
+
+
+  .upload-box {
+
+    min-height: 205px;
+
+  }
+
+
+  .checkerboard {
+
+    min-height: 290px;
+
+    border-radius: 18px;
+
+  }
+
+
+  .btn {
+
+    min-height: 52px;
+
+  }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 350px) {
+
+  .header h1 {
+
+    font-size: 24px;
+
+  }
+
+
+  .header p {
+
+    font-size: 13px;
+
+  }
+
+
+  .upload-box {
+
+    min-height: 190px;
+
+    padding: 25px 15px;
+
+  }
+
+
+  .upload-icon {
+
+    width: 58px;
+
+    height: 58px;
+
+    font-size: 28px;
+
+  }
+
+
+  .checkerboard {
+
+    min-height: 250px;
+
+  }
+
+}
+
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+button:focus-visible,
+.upload-box:focus-visible {
+
+  outline:
+    2px solid
+    var(--green);
+
+  outline-offset:
+    3px;
+
+}
+
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+
+    animation-duration:
+      .01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      .01ms !important;
+
+  }
+
+}

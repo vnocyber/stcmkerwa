@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sticker Maker</title>
+
+  <meta
+    name="description"
+    content="Buat sticker WhatsApp dari foto dengan background transparan."
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="app">
+
+    <!-- HEADER -->
+    <header class="header">
+
+      <div class="logo">
+        ✂️
+      </div>
+
+      <h1>Sticker Maker</h1>
+
+      <p>
+        Buat sticker WhatsApp dari foto kamu
+      </p>
+
+    </header>
+
+
+    <!-- MAIN CARD -->
+    <section class="card">
+
+      <!-- UPLOAD -->
+      <label
+        class="upload-box"
+        for="fileInput"
+        id="uploadBox"
+      >
+
+        <div class="upload-icon">
+          📷
+        </div>
+
+        <h2>
+          Pilih Foto
+        </h2>
+
+        <span>
+          JPG, PNG atau WEBP
+        </span>
+
+      </label>
+
+      <input
+        type="file"
+        id="fileInput"
+        accept="image/png,image/jpeg,image/webp"
+        hidden
+      >
+
+
+      <!-- LOADING -->
+      <div
+        class="loading"
+        id="loading"
+      >
+
+        <div class="spinner"></div>
+
+        <p id="loadingText">
+          Memproses foto...
+        </p>
+
+      </div>
+
+
+      <!-- STATUS -->
+      <div
+        class="status"
+        id="status"
+      ></div>
+
+
+      <!-- PREVIEW -->
+      <div
+        class="preview-container"
+        id="previewContainer"
+      >
+
+        <div class="checkerboard">
+
+          <canvas
+            id="stickerCanvas"
+            width="512"
+            height="512"
+          ></canvas>
+
+        </div>
+
+      </div>
+
+
+      <!-- ACTIONS -->
+      <div
+        class="actions"
+        id="actions"
+      >
+
+        <button
+          type="button"
+          class="btn btn-download"
+          id="downloadBtn"
+        >
+          <span>⬇️</span>
+          Download Sticker
+        </button>
+
+
+        <button
+          type="button"
+          class="btn btn-share"
+          id="shareBtn"
+        >
+          <span>📤</span>
+          Bagikan File
+        </button>
+
+
+        <button
+          type="button"
+          class="btn btn-whatsapp"
+          id="whatsappBtn"
+        >
+          <span>💬</span>
+          Bagikan ke WhatsApp
+        </button>
+
+
+        <button
+          type="button"
+          class="btn btn-reset"
+          id="resetBtn"
+        >
+          <span>🔄</span>
+          Buat Sticker Baru
+        </button>
+
+      </div>
+
+
+      <!-- INFO -->
+      <div class="info">
+
+        <div class="info-item">
+          <span>✂️</span>
+          <p>
+            Background foto dapat dihapus otomatis.
+          </p>
+        </div>
+
+        <div class="info-item">
+          <span>🖼️</span>
+          <p>
+            Sticker dibuat dengan background transparan.
+          </p>
+        </div>
+
+        <div class="info-item">
+          <span>📱</span>
+          <p>
+            Hasil dapat dibagikan melalui menu Share HP.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+      Sticker Maker
+
+    </footer>
+
+  </main>
+
+
+  <script src="script.js"></script>
+
+</body>
+  </html>
